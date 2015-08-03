@@ -1,5 +1,9 @@
 <h1>Edit Event</h1>
-<%=render "form"%>
-<%= form_for @event, method: :delete do |f| %>
-  <%= f.submit "Delete Event" %>
+<%if @event.user.id == current_user.id%>
+  <%=render "form"%>
+  <%= form_for @event, method: :delete do |f| %>
+    <%= f.submit "Delete Event" %>
+  <% end %>
+<% else %>
+  <p>You don't have the permission to edit this event</p>
 <% end %>

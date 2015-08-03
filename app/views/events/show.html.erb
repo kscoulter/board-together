@@ -1,7 +1,12 @@
 
 <h1><%= @event.game_name %></h1>
-<p>Created By: <%= current_user.email %></p>
+<p>Created By: <%= @event.user.email %></p>
 <p>Players Needed: <%= @event.num_players %></p>
 <p>When: <%= @event.time %></p>
 <p>Where: <%= @event.location %></p>
 <p><%= @event.description %></p>
+
+<% if @event.user.id == current_user.id %>
+  <p>edit event</p>
+  <%= link_to "Edit Event", edit_user_event_path(@event.user,@event) %>
+<% end %>
