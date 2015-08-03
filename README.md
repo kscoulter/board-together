@@ -1,5 +1,5 @@
 # BoardTogether
-Connecting people with love of boardgames.
+Connecting people with love of boardgames. Easy way to find enough players for your favorite board games!
 
 ##User Stories
 * As a user I should be able to log in to my account
