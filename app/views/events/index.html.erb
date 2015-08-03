@@ -1,0 +1,8 @@
+<h1>List of Events</h1>
+<%@events.each do |e|%>
+<div>
+  <%= e.game_name %>
+  <%= e.location %>
+  <%= link_to "See more", event_path(e) %>
+<%end%>
+</div>
