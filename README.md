@@ -12,3 +12,5 @@ Connecting people with love of boardgames. Easy way to find enough players for y
 
 ##Entity Relationship Diagram
 https://drive.google.com/a/ucdavis.edu/file/d/0B2It0TBFUGm9MFNndGExdEEwV00/view?usp=sharing
+
+https://drive.google.com/a/ucdavis.edu/file/d/0B2It0TBFUGm9ZDhDeDVrWDZ0Vnc/view?usp=sharing
