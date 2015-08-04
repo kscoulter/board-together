@@ -16,11 +16,12 @@
   <%= link_to "Edit Event", edit_user_event_path(@event.user,@event) %>
 <% end %>
 
-<%if @event.user.email != current_user.email%>
-  <% if @event.num_players > 0 %>
-   <%= render "attendances/form" %>
-  <%else%>
-  <p>Event Full!</p>
-  <% end %>
-<%end%>
+<% if should_show_join_button? %>
+  <%= render "attendances/form" %>
+<% end %>
+
+<% if @event.attendances.find_by(user_id: current_user.id) %>
+  <%= render "attendances/leave" %>
+<% end %>
+
 </section>
