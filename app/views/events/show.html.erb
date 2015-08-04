@@ -1,26 +1,26 @@
 <div><%= link_to "Back", events_path%></div>
+<section class="event">
 <h1><%= @event.game_name %></h1>
 <p>Created By: <%= @event.user.email %></p>
 <p>Players Needed: <%= @event.num_players %></p>
 <p>When: <%= @event.time %></p>
 <p>Where: <%= @event.location %></p>
-<p><%= @event.description %></p>
+<div><p><%= @event.description %></p></div>
 <p>Users Joined:</p>
   <!-- This lists all the attendances for this event -->
-<% @attendances.each do |a| %>
-  <div>
-  <%if a.event_id == @event.id%>
-    <%= User.find(a.user_id).email %>
-  <%end%>
-  </div>
-<% end %>
+<% @event.attendances.each do |a| %>
+  <div><%= a.user.email %></div>
+<%end%>
 
 <% if @event.user.id == current_user.id %>
   <%= link_to "Edit Event", edit_user_event_path(@event.user,@event) %>
 <% end %>
 
 <%if @event.user.email != current_user.email%>
-  <%if @event.num_players > 0 %>
+  <% if @event.num_players > 0 %>
    <%= render "attendances/form" %>
-  <%end%>
+  <%else%>
+  <p>Event Full!</p>
+  <% end %>
 <%end%>
+</section>
