@@ -1,8 +1,8 @@
-<h1>List of Events</h1>
+<h1 class="event-list">List of Events</h1>
 <%@events.each do |e|%>
-<div>
-  <%= e.game_name %>
-  <%= e.location %>
+<section>
+  <p><%= e.game_name %></p>
+  <p><%= e.location %></p>
   <%= link_to "See more", event_path(e) %>
+</section>
 <%end%>
-</div>

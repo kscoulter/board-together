@@ -7,14 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div>
-    <% if current_user %>
-      <%=current_user.email%>
-    <% end %>
-  </div>
-  <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
-
-<%= yield %>
-
+  <nav>
+    <ul>
+      <% if current_user %>
+        <li>Hello, <%=current_user.email%></li>
+        <li><%= link_to 'Create Event', new_user_event_path(current_user) %></li>
+      <% end %>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+    <ul>
+  </nav>
+  <main>
+    <%= yield %>
+  </main>
 </body>
 </html>
