@@ -20,4 +20,19 @@ module ApplicationHelper
     end
   end
 
+  def sorted_dates
+    @today = []
+    @tomorrow = []
+    @future = []
+    Event.all.each do |e|
+      if e.time.today?
+        @today.push(e)
+      elsif e.time.to_date == Date.tomorrow.to_date
+        @tomorrow.push(e)
+      elsif e.time.future?
+        @future.push(e)
+      end
+    end
+    return {today: @today, tomorrow: @tomorrow, future: @future}
+  end
 end
