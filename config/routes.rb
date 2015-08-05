@@ -5,9 +5,13 @@ Rails.application.routes.draw do
     resources :attendances
   end
 
-  resources :users do
-    resources :events
-  end
+  # resources :users do
+    # resources :events
+  # end
+
+  # resources :users do
+  #   resource :profile
+  # end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

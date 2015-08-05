@@ -13,7 +13,8 @@
         <li class="user_name">Hello, <%=current_user.email%></li>
         <a href="<%=new_user_event_path(current_user) %>"><li>Create Event</li></a>
       <% end %>
-      <a href="destroy_user_session_path"><li>Sign Out</li></a>
+        <%=link_to "Sign Out", destroy_user_session_path%>
+
     <ul>
   </nav>
   <main>
