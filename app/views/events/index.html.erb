@@ -4,13 +4,12 @@
 <%if sorted_dates[:today].length > 0%>
   <!-- #display today's events -->
   <%sorted_dates[:today].each do |e|%>
-  <a href="<%=event_path(e)%>" class ="see_event">
     <section>
       <h2><%=e.game_name%></h2>
       <p><%=e.time.strftime("%a, %b %d %I:%M %p")%></p>
       <p><%=e.location%></p>
+      <a href="<%=event_path(e)%>" class ="see_event"></a>
     </section>
-  </a>
   <%end%>
 <%else%>
   <section>There are no events scheduled for today.</section>
