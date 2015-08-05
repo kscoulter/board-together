@@ -10,6 +10,9 @@ body {
 main{
   padding: 10px 15%;
 }
+a {
+  text-decoration: none;
+}
 input,label {
   display: block;
 }
@@ -17,6 +20,9 @@ nav {
   background-color: #588C7E;
   text-align: right;
   padding: 1px;
+  border: 2px solid #35544C;
+  border-collapse: collapse;
+  padding: 0;
 }
 nav ul{
   padding: 0;
@@ -30,15 +36,14 @@ nav li{
   padding: 7px;
   margin: 0 -3px;
 }
-li:first-child{
+/*li:first-child{
   position: absolute;
   left: 10px;
   border: none;
   margin: auto;
-}
+}*/
 nav a{
   color: white;
-  text-decoration: none;
 }
 nav ul li:hover{
   background-color: #35544C;
@@ -47,6 +52,17 @@ nav ul li:hover{
   text-align: center;
 }
 section{
-  background-color: #D96459;
+  background-color: #F2AE72;
   margin-bottom: 10px;
+  padding: 10px 10px;
+}
+.see_event section{
+  color: #8C4646;
+}
+.see_event h2{
+  margin: 0;
+  color: #703838;
+}
+.user_name{
+  float: left;
 }

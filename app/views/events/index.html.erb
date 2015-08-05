@@ -1,8 +1,37 @@
 <h1 class="event-list">List of Events</h1>
+<h1>Today</h1>
 <%@events.each do |e|%>
-<section>
-  <p><%= e.game_name %></p>
-  <p><%= e.location %></p>
-  <%= link_to "See more", event_path(e) %>
-</section>
-<%end%>
+  <% if e.time.today? %>
+    <a href="<%=event_path(e)%>" class ="see_event">
+      <section>
+        <h2><%= e.game_name %></h2>
+        <p><%= e.time.strftime("%a, %b %d %I:%M %p") %></p>
+        <p><%= e.location %></p>
+      </section>
+    </a>
+  <% end %>
+<% end %>
+<h1>Tomorrow</h1>
+<%@events.each do |e|%>
+  <% if e.time == Date.tomorrow %>
+    <a href="<%=event_path(e)%>" class ="see_event">
+      <section>
+        <h2><%= e.game_name %></h2>
+        <p><%= e.time.strftime("%a, %b %d %I:%M %p") %></p>
+        <p><%= e.location %></p>
+      </section>
+    </a>
+  <% end %>
+<% end %>
+<h1>Coming Up</h1>
+<%@events.each do |e|%>
+  <% if e.time.future? %>
+    <a href="<%=event_path(e)%>" class ="see_event">
+      <section>
+        <h2><%= e.game_name %></h2>
+        <p><%= e.time.strftime("%a, %b %d %I:%M %p") %></p>
+        <p><%= e.location %></p>
+      </section>
+    </a>
+  <% end %>
+<% end %>

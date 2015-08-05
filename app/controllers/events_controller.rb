@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @events = Event.all
+    @events = Event.all.order(:time)
   end
 
   def show
@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     else
       @attendance = Attendance.new
     end
-    
+
     @attendances = Attendance.all
   end
 

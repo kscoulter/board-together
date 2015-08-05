@@ -3,7 +3,7 @@
 <h1><%= @event.game_name %></h1>
 <p>Created By: <%= @event.user.email %></p>
 <p>Players Needed: <%= @event.num_players %></p>
-<p>When: <%= @event.time %></p>
+<p>When: <%= @event.time.strftime("%a, %b %d %I:%M %p") %></p>
 <p>Where: <%= @event.location %></p>
 <div><p><%= @event.description %></p></div>
 <p>Users Joined:</p>

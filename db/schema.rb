@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 20150803191343) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string  "game_name"
-    t.integer "num_players"
-    t.string  "time"
-    t.string  "location"
-    t.string  "description"
-    t.integer "user_id"
+    t.string   "game_name"
+    t.integer  "num_players"
+    t.datetime "time"
+    t.string   "location"
+    t.string   "description"
+    t.integer  "user_id"
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
