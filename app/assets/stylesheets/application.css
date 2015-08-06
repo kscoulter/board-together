@@ -29,19 +29,16 @@ nav ul{
   margin: 0;
 }
 nav li{
-  border: 3px solid #35544C;
-  color: white;
   list-style-type: none;
   display: inline-block;
+}
+nav li a{
+  display:block;
   padding: 7px;
   margin: 0 -3px;
+  border: 3px solid #35544C;
+  color: white;
 }
-/*li:first-child{
-  position: absolute;
-  left: 10px;
-  border: none;
-  margin: auto;
-}*/
 nav a{
   color: white;
 }
@@ -55,6 +52,16 @@ section{
   background-color: #F2AE72;
   margin-bottom: 10px;
   padding: 10px 10px;
+  position: relative;
+}
+section a{
+  display: block;
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index:100;
+  top:0;
+  left:0;
 }
 .see_event section{
   color: #8C4646;
@@ -65,4 +72,9 @@ section{
 }
 .user_name{
   float: left;
+  display:block;
+  padding: 7px;
+  margin: 0 -3px;
+  border: 3px solid #35544C;
+  color: white;
 }

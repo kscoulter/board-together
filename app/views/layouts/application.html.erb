@@ -10,10 +10,14 @@
   <nav>
     <ul>
       <% if current_user %>
-        <li class="user_name">Hello, <%=current_user.email%></li>
-        <a href="<%=new_user_event_path(current_user) %>"><li>Create Event</li></a>
-      <% end %>
-      <a href="<%=destroy_user_session_path(current_user)%>"><li>Sign Out</li></a>
+
+        <li class="user_name"><%=current_user.email%></li>
+
+        <li><%= link_to "Create Event", new_user_event_path(current_user)%></li>
+
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <%end%>
+
     <ul>
   </nav>
   <main>
