@@ -11,8 +11,10 @@ class CommentsController < ApplicationController
   def destroy
     @event = Event.find(params[:event_id])
     @comment = @event.comments.find(params[:id])
-    @comment.destroy
-    redirect_to event_path(@event)
+    if current_user.email == @comment.commenter
+      @comment.destroy
+      redirect_to event_path(@event)
+    end
   end
 
   private
