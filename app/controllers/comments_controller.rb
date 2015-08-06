@@ -2,6 +2,9 @@ class CommentsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     @comment = @event.comments.create(comment_params)
+    #overriding the commenter field
+    @comment[:commenter] = current_user.email
+    @comment.save
     redirect_to event_path(@event)
   end
 

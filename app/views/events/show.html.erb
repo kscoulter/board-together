@@ -30,9 +30,10 @@
 
 <%if @event.comments.all.length > 0 %>
   <section class="comments">
-  <%@event.comments.each do |comment|%>
+  <%@event.comments.all.each do |comment|%>
+    <p><%=comment.commenter%></p>
     <p><%=comment.body%></p>
-    <%= link_to 'Destroy Comment', [comment.event, comment],
+    <%= link_to 'Delete Comment', [comment.event, comment],
                  method: :delete,
                  data: { confirm: 'Are you sure?' } %>
   <%end%>
