@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803191343) do
+ActiveRecord::Schema.define(version: 20150806010714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20150803191343) do
     t.integer "user_id"
     t.integer "event_id"
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["event_id"], name: "index_comments_on_event_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.string   "game_name"
@@ -31,6 +41,17 @@ ActiveRecord::Schema.define(version: 20150803191343) do
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "location",    limit: 80
+    t.string  "gender",      limit: 10
+    t.string  "owned_games"
+    t.text    "bio"
+    t.text    "img_url"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -50,5 +71,6 @@ ActiveRecord::Schema.define(version: 20150803191343) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "events"
   add_foreign_key "events", "users"
 end
