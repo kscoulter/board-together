@@ -12,9 +12,9 @@
       <% if current_user %>
         <li class="user_name">
           <% if current_user.profile %>
-            <a href="<%=user_profile_path(current_user)%>">Hello, <%=current_user.email%></a>
+            <a href="<%=user_profiles_path(current_user)%>">Hello, <%=current_user.email%></a>
           <% else %>
-            <a href="<%=new_user_profile_path(current_user)%>">Hello, <%=current_user.email%></a>
+            <a href="<%=new_user_profiles_path(current_user)%>">Hello, <%=current_user.email%></a>
         </li>
       <%end%>
         <li><a href="<%=new_user_event_path(current_user) %>">Create Event</a></li>
