@@ -4,7 +4,7 @@
 <%if sorted_dates[:today].length > 0%>
   <!-- #display today's events -->
   <%sorted_dates[:today].each do |e|%>
-    <section>
+    <section class="event">
       <h2><%=e.game_name%></h2>
       <p><%=e.time.strftime("%a, %b %d %I:%M %p")%></p>
       <p><%=e.location%></p>
@@ -20,7 +20,7 @@
   <!-- display tomorrow's events -->
   <%sorted_dates[:tomorrow].each do |e|%>
   <a href="<%=event_path(e)%>" class ="see_event">
-    <section>
+    <section class="event">
       <h2><%=e.game_name%></h2>
       <p><%=e.time.strftime("%a, %b %d %I:%M %p")%></p>
       <p><%=e.location%></p>
@@ -36,7 +36,7 @@
   <!-- display future events -->
   <%sorted_dates[:future].each do |e|%>
   <a href="<%=event_path(e)%>" class ="see_event">
-    <section>
+    <section class="event">
       <h2><%=e.game_name%></h2>
       <p><%=e.time.strftime("%a, %b %d %I:%M %p")%></p>
       <p><%=e.location%></p>

@@ -54,7 +54,7 @@ section{
   padding: 10px 10px;
   position: relative;
 }
-section a{
+.event a{
   display: block;
   position:absolute;
   width:100%;
