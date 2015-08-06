@@ -34,9 +34,11 @@
     <div class="comment">
     <p><%=comment.commenter%></p>
     <p><%=comment.body%></p>
-    <%= link_to 'Delete Comment', [comment.event, comment],
-                 method: :delete,
-                 data: { confirm: 'Are you sure?' } %>
+    <%if current_user.email == comment.commenter%>
+      <%= link_to 'Delete Comment', [comment.event, comment],
+                   method: :delete,
+                   data: { confirm: 'Are you sure?' } %>
+    <%end%>
     </div>
   <%end%>
   </section>
