@@ -25,3 +25,16 @@
 <% end %>
 
 </section>
+
+<%= render "comments/form" %>
+
+<%if @event.comments.all.length > 0 %>
+  <section class="comments">
+  <%@event.comments.each do |comment|%>
+    <p><%=comment.body%></p>
+    <%= link_to 'Destroy Comment', [comment.event, comment],
+                 method: :delete,
+                 data: { confirm: 'Are you sure?' } %>
+  <%end%>
+  </section>
+<%end%>
