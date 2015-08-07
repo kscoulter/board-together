@@ -162,3 +162,6 @@ section{
   margin-right: 6%;
   padding: 0;
 }
+#error_explanation{
+  color: white;
+}
