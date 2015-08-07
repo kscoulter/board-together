@@ -1,6 +1,6 @@
-<h1 class="event-list">List of Events</h1>
+<h1 class="event-list">Events</h1>
 
-<h1>Today</h1>
+<h1>TODAY</h1>
 <%if sorted_dates[:today].length > 0%>
   <!-- #display today's events -->
   <%sorted_dates[:today].each do |e|%>
@@ -9,39 +9,40 @@
       <p><%=e.time.strftime("%a, %b %d %I:%M %p")%></p>
       <p><%=e.location%></p>
       <a href="<%=event_path(e)%>" class ="see_event"></a>
+      <p class="link-text">See More</p>
     </section>
   <%end%>
 <%else%>
   <section>There are no events scheduled for today.</section>
 <%end%>
 
-<h1>Tomorrow</h1>
+<h1>TOMORROW</h1>
 <%if sorted_dates[:tomorrow].length > 0%>
   <!-- display tomorrow's events -->
   <%sorted_dates[:tomorrow].each do |e|%>
-  <a href="<%=event_path(e)%>" class ="see_event">
     <section class="event">
       <h2><%=e.game_name%></h2>
       <p><%=e.time.strftime("%a, %b %d %I:%M %p")%></p>
       <p><%=e.location%></p>
+      <a href="<%=event_path(e)%>" class ="see_event"></a>
+      <p class="link-text">See More</p>
     </section>
-  </a>
   <%end%>
 <%else%>
   <section>There are no events scheduled for tomorrow.</section>
 <%end%>
 
-<h1>Coming Up</h1>
+<h1>UPCOMING</h1>
 <%if sorted_dates[:future].length > 0%>
   <!-- display future events -->
   <%sorted_dates[:future].each do |e|%>
-  <a href="<%=event_path(e)%>" class ="see_event">
     <section class="event">
       <h2><%=e.game_name%></h2>
       <p><%=e.time.strftime("%a, %b %d %I:%M %p")%></p>
       <p><%=e.location%></p>
+      <a href="<%=event_path(e)%>" class ="see_event"></a>
+      <p class="link-text">See More</p>
     </section>
-  </a>
   <%end%>
 <%else%>
   <section>There are no events coming up.</section>

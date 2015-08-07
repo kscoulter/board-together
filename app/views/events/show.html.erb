@@ -1,15 +1,15 @@
 <div><%= link_to "Back", events_path%></div>
 <section class="event">
-<h1><%= @event.game_name %></h1>
-<p>Created By: <%= @event.user.email %></p>
-<p>Players Needed: <%= @event.num_players %></p>
-<p>When: <%= @event.time.strftime("%a, %b %d %I:%M %p") %></p>
-<p>Where: <%= @event.location %></p>
+<h2><%= @event.game_name %></h2>
+<p><em>Created By:</em> <%= @event.user.email %></p>
+<p><em>Players Needed:</em> <%= @event.num_players %></p>
+<p><em>When:</em> <%= @event.time.strftime("%a, %b %d %I:%M %p") %></p>
+<p><em>Where:</em> <%= @event.location %></p>
 <div><p><%= @event.description %></p></div>
-<p>Users Joined:</p>
+<p><em>Users Joined:</em></p>
   <!-- This lists all the attendances for this event -->
 <% @event.attendances.each do |a| %>
-  <div><%= a.user.email %></div>
+  <p class="joined"><%= a.user.email %></p>
 <%end%>
 
 <% if @event.user.id == current_user.id %>
@@ -29,10 +29,10 @@
 <%= render "comments/form" %>
 
 <%if @event.comments.all.length > 0 %>
-  <section class="comments">
+  <div class="comments">
   <%@event.comments.all.each do |comment|%>
     <div class="comment">
-    <p><%=comment.commenter%></p>
+    <p><strong><%=comment.commenter%></strong></p>
     <p><%=comment.body%></p>
     <%if current_user.email == comment.commenter%>
       <%= link_to 'Delete Comment', [comment.event, comment],
@@ -41,5 +41,5 @@
     <%end%>
     </div>
   <%end%>
-  </section>
+</div>
 <%end%>

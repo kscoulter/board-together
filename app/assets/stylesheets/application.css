@@ -2,19 +2,42 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #F2E394;
+  background-color: #8C4646;
   color: #8C4646;
   padding: 0;
   margin: 0 2px;
+}
+h1{
+  color: white;
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 44px;
+}
+h2{
+  font-family: 'Crimson Text', serif;
+  font-size: 52px;
+  margin: 0;
+}
+h3{
+  color: white;
+  font-size: 23px;
+}
+p{
+  font-size: 23px;
+  margin: 5px;
 }
 main{
   padding: 10px 15%;
 }
 a {
   text-decoration: none;
+  text-align: center;
+  color: white;
 }
 input,label {
   display: block;
+}
+label{
+  color: white;
 }
 nav {
   background-color: #588C7E;
@@ -46,29 +69,71 @@ nav ul li:hover{
   background-color: #35544C;
 }
 .event-list{
+  color: #8C4646;
   text-align: center;
+  position: absolute;
+  top: 85px;
+  left: 43%;
+  font-size: 95px;
+  font-family: 'Merienda One', cursive;
 }
 section{
   background-color: #F2AE72;
   margin-bottom: 10px;
-  padding: 10px 10px;
+  padding: 5px 30px;
   position: relative;
 }
-.event a{
+.event a {
   display: block;
   position:absolute;
-  width:100%;
+  width:20%;
   height:100%;
   z-index:100;
   top:0;
-  left:0;
+  right:0;
+  background-color: #588C7E;
+  padding-top: 10%;
+}
+.event p{
+  padding-right: 255px;
 }
 .see_event section{
   color: #8C4646;
 }
 .see_event h2{
-  margin: 0;
   color: #703838;
+}
+.see_event a{
+  text-align: center;
+  padding-top: 68px;
+  color: white;
+}
+.see_event:hover {
+  background-color: #35544C;
+}
+.comments {
+  margin-top: 25px;
+}
+.comment{
+  margin-bottom: 10px;
+  background-color: #F2AE72;
+  padding: 10px;
+  position: relative;
+}
+.comment p{
+  padding-right: 220px;
+}
+.comment a{
+  display: block;
+  position:absolute;
+  width:16%;
+  height:100%;
+  z-index:100;
+  top:0;
+  right:0;
+  background-color: #588C7E;
+  color: white;
+  padding-top: 20px;
 }
 .user_name{
   float: left;
@@ -77,4 +142,23 @@ section{
   margin: 0 -3px;
   border: 3px solid #35544C;
   color: white;
+}
+.banner-img{
+  height: 380px;
+  background: url('https://farm6.staticflickr.com/5320/7366181556_07862c1147_o_d.jpg') center center;
+  background-size: cover;
+  repeat: no-repeat;
+}
+.joined{
+  color: #D96459;
+}
+.event .link-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 102;
+  margin-top: 5%;
+  color: white;
+  margin-right: 6%;
+  padding: 0;
 }
