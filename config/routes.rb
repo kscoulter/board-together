@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "events#index"
+
+  get "users/:id/profiles", to: "profiles#show"
+  get "users/:id/profiles/new", to: "profiles#new"
+
   resources :events do
     resources :attendances, :comments, :except => [:index, :show]
   end
