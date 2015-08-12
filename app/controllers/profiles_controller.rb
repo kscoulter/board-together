@@ -3,15 +3,16 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     if @user.profile
       @profile = @user.profile
+    elsif @user == current_user
+      redirect_to "/users/#{current_user.id}/profiles/new"
     else
-      redirect_to :action => "new"
+      redirect_to root_path
     end
   end
 
   def new
     @user = current_user
-    @profile = Profile.new
-    redirect_to @user
+    @profile = @user.build_profile
   end
 
   def create

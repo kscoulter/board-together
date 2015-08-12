@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "events#index"
 
-  get "users/:id/profiles", to: "profiles#show"
+  get "users/:id/", to: "profiles#show"
   get "users/:id/profiles/new", to: "profiles#new"
   post "users/:id/profiles", to: "profiles#create"
 
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :events
+    resource :profile
   end
 
 
