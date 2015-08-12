@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
   def new
     @user = current_user
     @profile = Profile.new
+    redirect_to @user
   end
 
   def create
@@ -20,16 +21,16 @@ class ProfilesController < ApplicationController
     @profile.save
   end
 
-  def edit
-    @user = User.find(params[:user_id])
-    @profile = Profile.find_by(user_id: params[:user_id])
-  end
-
-  def update
-    @user = User.find(params[:user_id])
-    #@profile = Profile.find_by(user_id: params[:user_id])
-    @profile= Profile.create(profile_params)
-  end
+  # def edit
+  #   @user = User.find(params[:user_id])
+  #   @profile = Profile.find_by(user_id: params[:user_id])
+  # end
+  #
+  # def update
+  #   @user = User.find(params[:user_id])
+  #   #@profile = Profile.find_by(user_id: params[:user_id])
+  #   @profile= Profile.create(profile_params)
+  # end
 
   private
   def profile_params

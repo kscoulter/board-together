@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "users/:id/profiles", to: "profiles#show"
   get "users/:id/profiles/new", to: "profiles#new"
+  post "users/:id/profiles", to: "profiles#create"
 
   resources :events do
     resources :attendances, :comments, :except => [:index, :show]
