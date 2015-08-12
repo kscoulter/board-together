@@ -16,6 +16,8 @@ class ProfilesController < ApplicationController
   def create
     @user = current_user
     @profile = Profile.create(profile_params)
+    @profile.user = current_user
+    @profile.save
   end
 
   def edit
