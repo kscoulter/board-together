@@ -3,22 +3,21 @@
 }
 body {
   background-color: #8C4646;
-  color: #8C4646;
+  color: white;
   padding: 0;
   margin: 0 2px;
 }
 h1{
-  color: white;
   font-family: 'Averia Serif Libre', cursive;
   font-size: 44px;
 }
+
 h2{
   font-family: 'Crimson Text', serif;
   font-size: 52px;
   margin: 0;
 }
 h3{
-  color: white;
   font-size: 23px;
 }
 p{
@@ -36,9 +35,7 @@ a {
 input,label {
   display: block;
 }
-label{
-  color: white;
-}
+
 nav {
   background-color: #588C7E;
   text-align: right;
@@ -82,6 +79,9 @@ section{
   margin-bottom: 10px;
   padding: 5px 30px;
   position: relative;
+}
+.event{
+  color: #8C4646;
 }
 .event a {
   display: block;
@@ -137,10 +137,6 @@ section{
 }
 .user_name{
   float: left;
-  display:block;
-  padding: 7px;
-  margin: 0 -3px;
-  border: 3px solid #35544C;
   color: white;
 }
 .banner-img{
@@ -163,5 +159,5 @@ section{
   padding: 0;
 }
 #error_explanation{
-  color: white; 
+  color: white;
 }

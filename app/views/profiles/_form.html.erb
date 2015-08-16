@@ -1,21 +1,19 @@
-<% form_for @user, :url => {:action => 'create'} do |f| %>
-  <%= f.fields_for :profile, html: {class: "new_profile_form"} do |profile_f| %>
+<%= form_for @profile, url: user_profile_path(@user) do |f| %>
 
-    <%= profile_f.label :location, "Your Location" %>
-    <%= profile_f.text_field :location %>
+  <%= f.label :location, "Your Location" %>
+  <%= f.text_field :location %>
 
-    <%= profile_f.label :gender %>
-    <%= profile_f.text_field :gender %>
+  <%= f.label :gender %>
+  <%= f.text_field :gender %>
 
-    <%= profile_f.label :owned_games, "Board Games You Own" %>
-    <%= profile_f.text_field :owned_games %>
+  <%= f.label :owned_games, "Board Games You Own" %>
+  <%= f.text_field :owned_games %>
 
-    <%= profile_f.label :bio %>
-    <%= profile_f.text_field :bio %>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
 
-    <%= profile_f.label :img_url, "Provide a URL for Your Profile Picture" %>
-    <%= profile_f.text_field :img_url %>
+  <%= f.label :img_url, "Provide a URL for Your Profile Picture" %>
+  <%= f.text_field :img_url %>
 
-    <%= f.submit %>
-  <% end %>
+  <%= f.submit %>
 <% end  %>
