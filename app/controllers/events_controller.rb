@@ -23,7 +23,14 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.create(event_params)
-    redirect_to event_path(@event)
+    if @event.valid?
+      redirect_to event_path(@event)
+    else
+      @event.errors.messages.each do |message|
+        @message = message[1][0]
+      end
+      redirect_to new_event_path
+    end
   end
 
     def edit

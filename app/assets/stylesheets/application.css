@@ -161,3 +161,9 @@ section{
 #error_explanation{
   color: white;
 }
+main{
+  padding-bottom: 200px;
+}
+footer{
+  text-align: center;
+}
