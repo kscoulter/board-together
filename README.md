@@ -8,8 +8,11 @@ Connecting people with love of boardgames. Easy way to find enough players for y
 * As a user I should be able to delete an event I created
 * As a user I should be able to join an event
 * As a user I should be able to specify how many players I'm looking for
-* As a user I should be able to add new boardgames to the database 
 
 ##Entity Relationship Diagram
 
 https://drive.google.com/a/ucdavis.edu/file/d/0B2It0TBFUGm9ZDhDeDVrWDZ0Vnc/view?usp=sharing
+
+##Deployment
+
+Board together is deployed on Heroku. You can fidn it here: https://board-together.herokuapp.com/
