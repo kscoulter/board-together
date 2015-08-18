@@ -16,3 +16,5 @@ https://drive.google.com/a/ucdavis.edu/file/d/0B2It0TBFUGm9ZDhDeDVrWDZ0Vnc/view?
 ##Deployment
 
 Board together is deployed on Heroku. You can fidn it here: https://board-together.herokuapp.com/
+
+Note: while the profiles are implimented in the current master branch, those changes have not been pushed to Heroku yet. 
