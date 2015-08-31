@@ -1,8 +1,9 @@
 <h1>Profile for <%=@user.email%></h1>
-<%if @user.profile%>
-  <h1>profile exists</h1>
-  <p>Bio: <%=@profile.bio%></p>
+  <h2>Games I own:</h2>
   <p><%=@profile.owned_games%></p>
-<%else%>
-  <h1>profile doesn't exist</h1>
-<%end%>
+  <h2>Gender: </h2>
+  <p><%=@profile.gender%></p>
+  <h2>Location:</h2>
+  <p><%=@profile.location%></p>
+  <h2>Bio:</h2>
+  <p><%=@profile.bio%></p>
