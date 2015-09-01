@@ -1,3 +1,4 @@
+<%# It may be a good idea to have the Attendance CREATE route be GET, so instead of having to use a form to POST to the route, you can just use a regular link. %>
 <%= form_for [@event, @attendance] do |f| %>
   <%= f.submit "Join" %>
 <% end %>
